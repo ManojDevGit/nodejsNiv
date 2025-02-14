@@ -12,3 +12,21 @@ const promiseMsg = () => {
 promiseMsg().then((message) => console.log(message));
 
 /////////////////////////////////////////////////////////////////////////
+
+// STEP 4: Create a file using fs module and async/await.
+
+const fs = require("fs").promises;
+
+const writeFileAsAsync = async () => {
+  try {
+    await fs.writeFile(
+      "nodejs.txt",
+      "Create a file using fs module and async/await."
+    );
+    console.log("Done");
+  } catch (error) {
+    console.error("Failed to write:", error);
+  }
+};
+
+writeFileAsAsync();
